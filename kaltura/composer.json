@@ -1,0 +1,19 @@
+{
+  "name": "drupal/kaltura",
+  "description": "Provides Kaltura media integration for Drupal 8",
+  "type": "drupal-module",
+  "homepage": "https://www.wearebraid.com/",
+  "authors": [
+    {
+      "name": "Luke Roberts",
+      "homepage": "https://www.wearebraid.com/",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/core": "~8.4"
+    "kaltura/api-client-library": "^15.4"
+  }
+}

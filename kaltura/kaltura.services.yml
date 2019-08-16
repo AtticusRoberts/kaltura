@@ -1,0 +1,13 @@
+services:
+  kaltura.kaltura.url_resolver:
+    class: Drupal\kaltura\Kaltura\UrlResolver
+    arguments: ['@kaltura.kaltura.provider_repository', '@kaltura.kaltura.resource_fetcher', '@http_client', '@module_handler', '@cache.default']
+  kaltura.kaltura.provider_repository:
+    class: Drupal\kaltura\Kaltura\ProviderRepository
+    arguments: ['@http_client', '@config.factory', '@datetime.time', '@cache.default']
+  kaltura.kaltura.resource_fetcher:
+    class: Drupal\kaltura\Kaltura\ResourceFetcher
+    arguments: ['@http_client', '@config.factory', '@kaltura.kaltura.provider_repository', '@cache.default']
+  kaltura.kaltura.iframe_url_helper:
+    class: Drupal\media\IFrameUrlHelper
+    arguments: ['@router.request_context', '@private_key']

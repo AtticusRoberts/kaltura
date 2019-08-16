@@ -1,0 +1,15 @@
+<?php
+/**
+ * Implements hook_entity_type_alter().
+ *
+ * @param array $entity_types
+ */
+
+function kalutra_entity_type_alter(array &$entity_types) {
+  if (\Drupal::config('kaltura.settings')->get('standalone_url')) {
+    /** @var \Drupal\Core\Entity\ContentEntityTypeInterface $entity_type */
+    $entity_type = $entity_types['media'];
+    $entity_types['media']->addConstraint('KalturaResourceConstraint');
+    $entity_type->setLinkTemplate('canonical', '/media/{media}');
+  }
+}

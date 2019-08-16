@@ -1,0 +1,11 @@
+name: Kaltura
+type: module
+description: 'Support for remote Kaltura media in Drupal 8'
+core: 8.x
+package: Custom
+dependencies:
+  - drupal:file
+  - drupal:image
+  - drupal:user
+  - media
+configure: kaltura.settings
